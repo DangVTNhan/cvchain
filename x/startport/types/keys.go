@@ -17,6 +17,12 @@ const (
 	MemStoreKey = "mem_startport"
 
 	// this line is used by starport scaffolding # ibc/keys/name
+
+	// PostKey defines the post value store key
+	ArchievementKey = "Archievement-value-"
+
+	// PostCountKey defines the post count store key
+	ArchievementCountKey = "Archievement-count-"
 )
 
 // this line is used by starport scaffolding # ibc/keys/port

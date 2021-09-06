@@ -3,13 +3,40 @@ package DangVTNhan.startport.startport;
 
 import "google/api/annotations.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
+import "startport/archievement.proto";
+
 // this line is used by starport scaffolding # 1
 
 option go_package = "github.com/DangVTNhan/startport/x/startport/types";
 
 // Query defines the gRPC querier service.
 service Query {
-    // this line is used by starport scaffolding # 2
+  // this line is used by starport scaffolding # 2
+  rpc Archievement(QueryArchievementRequest) returns (QueryArchievementResponse) {
+		option (google.api.http).get = "/DangVTNhan/startport/startport/archievement/{id}";
+	}
+
+	// Queries a list of archievements items.
+	rpc Archievements(QueryArchievementsRequest) returns (QueryArchievementsResponse) {
+		option (google.api.http).get = "/DangVTNhan/startport/startport/archievement";
+	}
+
 }
 
 // this line is used by starport scaffolding # 3
+message QueryArchievementsRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryArchievementsResponse {
+  repeated Archievement Archievement = 1;
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryArchievementRequest {
+	string id = 1;
+}
+
+message QueryArchievementResponse {
+	Archievement Archievement = 1;
+}

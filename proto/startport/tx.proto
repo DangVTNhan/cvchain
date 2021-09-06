@@ -8,6 +8,17 @@ option go_package = "github.com/DangVTNhan/startport/x/startport/types";
 // Msg defines the Msg service.
 service Msg {
     // this line is used by starport scaffolding # proto/tx/rpc
+  rpc CreateAchievement(MsgCreateAchievement) returns (MsgCreateAchievementResponse);
 }
 
 // this line is used by starport scaffolding # proto/tx/message
+message MsgCreateAchievement {
+  string creator = 1;
+  string title = 2;
+  string organization = 3;
+  string toAccount = 4;
+}
+
+message MsgCreateAchievementResponse {
+  uint64 id = 1;
+}

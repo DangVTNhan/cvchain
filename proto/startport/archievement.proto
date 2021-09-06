@@ -1,0 +1,18 @@
+// proto/blog/post.proto
+syntax = "proto3";
+package DangVTNhan.startport.startport;
+
+
+option go_package = "github.com/DangVTNhan/startport/x/startport/types";
+
+import "gogoproto/gogo.proto";
+
+message Archievement {
+  string creator = 1;
+  uint64  id = 2;
+  string title = 3; 
+  string organization = 4;
+  string toAccount = 5;
+}
+
+
