@@ -12,10 +12,10 @@ func (k msgServer) CreateAchievement(goCtx context.Context, msg *types.MsgCreate
 
 	// TODO: Handling the message
 	var archievement = types.Archievement{
-		Creator:      "nhan",
-		Title:        "Test",
-		Organization: "Bach Khoa",
-		ToAccount:    "0x123",
+		Creator:      msg.GetCreator(),
+		Title:        msg.GetTitle(),
+		Organization: msg.GetOrganization(),
+		ToAccount:    msg.GetToAccount(),
 	}
 
 	id := k.AppendArchievement(ctx, archievement)

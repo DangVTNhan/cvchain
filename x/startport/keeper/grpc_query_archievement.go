@@ -18,9 +18,8 @@ func (k Keeper) Archievement(goCtx context.Context, req *types.QueryArchievement
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	store := ctx.KVStore(k.storeKey)
+	archievementStore := prefix.NewStore(ctx.KVStore(k.storeKey), types.KeyPrefix(types.ArchievementKey))
 
-	archievementStore := prefix.NewStore(store, types.KeyPrefix(types.ArchievementKey))
 
 	k.cdc.MustUnmarshalBinaryBare(archievementStore.Get(types.KeyPrefix(types.ArchievementKey + req.Id)), &archievement)
 	

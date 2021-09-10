@@ -1,6 +1,6 @@
 package types
 
 const (
-	QueryGetArchievement  = "Get-archievement"
-	QueryGetArchievements = "Get-archievements"
+	QueryGetArchievement  = "get-archievements"
+	QueryGetArchievements = "list-archievements"
 )
